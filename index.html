@@ -1,0 +1,816 @@
+<!--
+Author: John Laurence Aramay, BSCpE2
+Created: September 28, 2026
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Lau-PyDE is a simple, lightweight Python Development Environment focused on fast startup, low RAM usage, and a straightforward Python workflow.">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta property="og:title" content="Lau-PyDE — Simple & Lightweight Python Development Environment">
+    <meta property="og:description" content="A lightweight Python IDE designed for developers who want simplicity without resource overhead.">
+    <meta property="og:type" content="website">
+    
+    <title>Lau-PyDE — Simple & Lightweight Python Development Environment</title>
+    <link rel="icon" type="image/jpeg" href="assets/lau-pyde_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo" id="logoHome">
+                <img src="assets/lau-pyde_logo.jpg" alt="Lau-PyDE Logo" class="logo-img">
+                <span class="logo-text">Lau-PyDE</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+                <li><a href="#help" class="nav-link">Help</a></li>
+                <li><a href="support.html" class="nav-link">Support</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <!-- Hero section with screenshot background (slightly blurred for effect) -->
+    <section id="home" class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title"><span class="hero-title-text" id="heroTitleText">Lau-PyDE</span><span class="typing-cursor" aria-hidden="true"></span></h1>
+                    <p class="hero-subtitle">A simple and lightweight Python Development Environment.</p>
+                    <p class="hero-motto">
+                        <span class="code-text">Launch</span> the IDE <span class="code-text">→</span> Code <span class="code-text">→</span> Run
+                    </p>
+                    <p class="hero-description">
+                        Lau-PyDE is a lightweight, Python-focused development environment designed for developers who want a simple workflow without the resource usage and complexity of a large IDE.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <i class="fas fa-download"></i>
+                            <span>Download</span>
+                        </a>
+                        <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-window-bar">
+                            <span class="win-dot red"></span>
+                            <span class="win-dot yellow"></span>
+                            <span class="win-dot green"></span>
+                        </div>
+                        <div class="carousel-inner" id="carouselInner">
+                            <div class="carousel-item active">
+                                <img src="assets/Screenshot_20260920_191433.png" alt="Lau-PyDE Screenshot 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/Screenshot_20260920_191512.png" alt="Lau-PyDE Screenshot 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/Screenshot_20260920_191711.png" alt="Lau-PyDE Screenshot 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/Screenshot_20260920_093237.png" alt="Lau-PyDE Screenshot 4">
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" id="carouselPrev" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control next" id="carouselNext" aria-label="Next slide">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="carousel-view-btn" id="carouselView" type="button" aria-label="View screenshot larger">
+                            <i class="fas fa-expand"></i>
+                            <span>View</span>
+                        </button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-feather"></i>
+                    </div>
+                    <h3>Lightweight</h3>
+                    <p>~121 MB RAM usage</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python-Focused</h3>
+                    <p>Designed for Python developers</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Startup</h3>
+                    <p>~4.7 seconds</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3>Linux-Friendly</h3>
+                    <p>Optimized for Linux</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Simple Workflow</h3>
+                    <p>Write → Run → Output</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Minimal Dependencies</h3>
+                    <p>Install once, run anywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Lau-PyDE</h2>
+            
+            <article class="content-block">
+                <h3>What is Lau-PyDE?</h3>
+                <p>
+                    Lau-PyDE stands for <strong>Python Development Environment</strong>. I created a simple and lightweight IDE focused specifically on Python development. It's not meant to be another PyCharm or VS Code clone.
+                </p>
+                <p>
+                    My goal was to provide enough features to comfortably:
+                </p>
+                <div class="code-block">
+                    <code>Write <span class="arrow">→</span> Check <span class="arrow">→</span> Run <span class="arrow">→</span> Output <span class="arrow">→</span> Fix <span class="arrow">→</span> Run again</code>
+                </div>
+            </article>
+
+            <article class="content-block">
+                <h3>Why I Created Lau-PyDE</h3>
+                <p>
+                    I was required to use PyCharm for school, and I noticed something troubling: on my 8 GB RAM laptop, PyCharm consumed around 2 GB of RAM just to write Python code. That's half my system memory for a text editor. I thought there had to be a better way.
+                </p>
+                <p>
+                    So I built Lau-PyDE to focus on what matters:
+                </p>
+                <ul class="feature-list">
+                    <li>Low RAM usage</li>
+                    <li>Fast startup</li>
+                    <li>Python development</li>
+                    <li>Linux compatibility</li>
+                    <li>Straightforward UI</li>
+                    <li>Minimal dependencies</li>
+                    <li>User control</li>
+                </ul>
+            </article>
+
+            <article class="content-block">
+                <h3>My Design Philosophy</h3>
+                <p>
+                    <em>"Enough features to comfortably write Python without making the IDE heavy."</em>
+                </p>
+                <p>
+                    I intentionally decided <strong>NOT</strong> to compete feature-for-feature with PyCharm, VS Code, or IntelliJ-style IDEs. Instead, I prefer simple and useful features over massive systems like full IntelliSense, AI autocomplete, plugin marketplaces, or complex language servers.
+                </p>
+                <p>
+                    <strong>My Motto:</strong> "Launch the IDE <span class="arrow">→</span> Code <span class="arrow">→</span> Run"
+                </p>
+                <p>
+                    <strong>My Packaging Philosophy:</strong> "Install once <span class="arrow">→</span> Run everywhere"
+                </p>
+            </article>
+
+            <article class="content-block">
+                <h3>Linux Compatibility</h3>
+                <p>
+                    I primarily developed and tested Lau-PyDE on Linux, so it's most compatible with Linux, especially my Linux workflow. I focused on Arch Linux during development.
+                </p>
+                <p>
+                    Don't expect universal Linux compatibility across all distributions. My focus is on developer workflow compatibility, not hitting every Linux variant.
+                </p>
+            </article>
+
+            <article class="content-block">
+                <h3>Performance Comparison</h3>
+                <p class="benchmark-note">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> These are my personal benchmark results on my hardware and environment (Arch Linux) using the same large project. These are NOT universal benchmarks and will vary based on system specs, Python version, and project complexity.
+                </p>
+                
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Lau-PyDE</th>
+                            <th>PyCharm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAM (RSS)</td>
+                            <td>~121.6 MiB</td>
+                            <td>~1,264.7 MiB</td>
+                        </tr>
+                        <tr>
+                            <td>Startup Time</td>
+                            <td>4.72 seconds</td>
+                            <td>25.52 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>RAM (Alternative)</td>
+                            <td>~121.0 MiB</td>
+                            <td>~1,271.7 MiB</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p class="benchmark-result">
+                    <strong>Result:</strong> In this test, PyCharm used roughly <strong>10.5× more RAM</strong>. Lau-PyDE used approximately <strong>90.5% less RAM</strong>.
+                </p>
+            </article>
+
+            <article class="content-block">
+                <h3>What I've Built</h3>
+                <ul class="feature-list">
+                    <li>Python editor with syntax highlighting</li>
+                    <li>Basic diagnostics</li>
+                    <li>Lightweight typo/name suggestions</li>
+                    <li>Auto indentation</li>
+                    <li>Line numbers</li>
+                    <li>Current-line highlighting</li>
+                    <li>File explorer with project folders</li>
+                    <li>Recent project restoration</li>
+                    <li>Run and stop Python files</li>
+                    <li><code>input()</code> support</li>
+                    <li>Integrated terminal</li>
+                    <li>Save / Save As</li>
+                    <li>Dark theme</li>
+                    <li>Search functionality</li>
+                </ul>
+            </article>
+
+            <article class="content-block">
+                <h3>The Logo Story</h3>
+                <p>
+                    At first, the Lau-PyDE logo looks random, like a meme. It isn't. Every piece has a reason behind it. Press the run button beside each part to see what it means.
+                </p>
+                <div class="logo-story-actions">
+                    <button class="btn btn-outline" id="viewLogoBtn" type="button">
+                        <i class="fas fa-image"></i>
+                        <span>View Logo</span>
+                    </button>
+                </div>
+
+                <ul class="logo-parts">
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-linux">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>Linux (the penguin)</span>
+                        </button>
+                        <div class="part-detail" id="part-linux"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The penguin represents the environment of Lau-PyDE. Linux is where I mostly developed and tested it, so the penguin shows where the project came from.</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-arch">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>Arch Linux (the blue "A")</span>
+                        </button>
+                        <div class="part-detail" id="part-arch"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The blue "A" on the right side is the specific home of Lau-PyDE. It isn't just a generic Linux environment; Arch Linux is the one I used the most while building the project. I tested and debugged it there, fixed the dependencies and packaging there, and went through the whole development process there.</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-python">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>Python (the left side)</span>
+                        </button>
+                        <div class="part-detail" id="part-python"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The Python logo isn't there only because I used Python to build Lau-PyDE. It's there because Lau-PyDE itself is made specifically for Python. Python is the purpose of the IDE, not just the language behind it.</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-man">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>The man (me)</span>
+                        </button>
+                        <div class="part-detail" id="part-man"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The man in the logo is me. I chose myself as the subject because the logo tells two things at once: the technical parts represent the project, while the character represents what I went through while making it. I used FaceApp to give him a beard and change his hair color.</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-beard">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>The beard</span>
+                        </button>
+                        <div class="part-detail" id="part-beard"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The beard symbolizes that I was neglecting myself while building the project. Development took around three days of almost nonstop work, and my only breaks were eating and sleeping. I was so focused that I forgot about myself.</p>
+                            <p>This is just my personal interpretation. It's not an attack on people who have beards.</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-hair">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>The white hair</span>
+                        </button>
+                        <div class="part-detail" id="part-hair"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>The white hair comes from exhaustion. As development dragged on, I felt like I was aging from the tiredness, lack of sleep, stress, and all the negative feelings that come with a long build.</p>
+                            <p>It's exaggerated, of course. Coding didn't literally turn my hair white. It's a visual joke: "Grabe, tatanda ako nito."</p>
+                        </div></div></div>
+                    </li>
+                    <li class="logo-part">
+                        <button class="part-toggle" type="button" aria-expanded="false" aria-controls="part-luna">
+                            <span class="run-icon"><i class="fas fa-play"></i></span>
+                            <span>Reanne Borela and "Luna" (the singer at the bottom)</span>
+                        </button>
+                        <div class="part-detail" id="part-luna"><div class="part-detail-inner"><div class="part-detail-body">
+                            <p>Yes, she has no technical connection to Lau-PyDE. She is <strong>Reanne Borela</strong>, a singer, and while I was developing Lau-PyDE I kept listening to her song <strong>"Luna."</strong> Over time the song became part of the memory of making the project.</p>
+                            <p>There's a second reason. I used FaceApp without a Pro subscription, so the image had a watermark at the bottom. Instead of leaving it, I covered it, and that's where her face came in. Her presence in the logo comes from both the song and the process of making the character.</p>
+                            <div class="part-links">
+                                <a href="https://www.instagram.com/reanneborela/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i>Reanne Borela's profile</a>
+                                <a href="https://open.spotify.com/track/6BHyiXCjEuchg6XHlpEQRM" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i>Listen to "Luna"</a>
+                            </div>
+                        </div></div></div>
+                    </li>
+                </ul>
+
+                <div class="part-credits">
+                    <p>
+                        <strong>Credits and inspirations:</strong>
+                        The logo includes visual references to the <a href="https://www.linux.org/" target="_blank" rel="noopener noreferrer">Linux</a> mascot, the <a href="https://archlinux.org/" target="_blank" rel="noopener noreferrer">Arch Linux</a> brand, the <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a> logo, singer <a href="https://www.instagram.com/reanneborela/" target="_blank" rel="noopener noreferrer">Reanne Borela</a>, and the <a href="https://www.faceapp.com/" target="_blank" rel="noopener noreferrer">FaceApp</a> app used to stylize the character. These were personal references from the build process and are included as credit and inspiration, not as official endorsements.
+                    </p>
+                </div>
+                <p>
+                    So the logo looks like a meme, but every random-looking part has a story. It wasn't planned around one perfect design concept; I pieced together the things that became part of my experience building Lau-PyDE. The white-haired/bearded character is <strong>NOT</strong> intended to represent Linus Torvalds.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section">
+        <div class="container">
+            <h2>Download Lau-PyDE</h2>
+            
+            <div class="os-selector-top">
+                <button class="os-btn active" data-os="windows">
+                    <i class="fab fa-windows"></i>
+                    <span>Windows</span>
+                </button>
+                <button class="os-btn" data-os="linux">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux</span>
+                </button>
+            </div>
+            
+            <div class="download-tabs">
+                <div class="tab-content active" id="windows-tab">
+                    <div class="version-picker">
+                        <label for="windowsVersion">Release version</label>
+                        <div class="select-wrap">
+                            <select id="windowsVersion" class="version-select">
+                                <option value="1.0.0" selected>v1.0.0 (Latest)</option>
+                                <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
+                                <option value="1.1.0" disabled>v1.1.0 (Coming soon)</option>
+                                <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + file path) -->
+                                <option value="1.2.0" disabled>v1.2.0 (Coming soon)</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="release-panel active" data-version="1.0.0">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <h3>Lau-PyDE for Windows</h3>
+                            <span class="version-badge">v1.0.0</span>
+                            <p class="file-type">.exe installer</p>
+                            <a href="installer/windows/Lau-PyDE-Setup.exe" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i>
+                                <span>Download Now</span>
+                            </a>
+                            
+                            <div class="install-info">
+                                <h4>After Installation</h4>
+                                <p>
+                                    Lau-PyDE requires a Python interpreter to run Python programs. Download and install Python from the official website:
+                                </p>
+                                <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                    <i class="fab fa-python"></i>
+                                    <span>Get Python</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FUTURE RELEASE TEMPLATE (Windows): uncomment, then edit the version and the installer path
+                    <div class="release-panel" data-version="1.1.0">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <h3>Lau-PyDE for Windows</h3>
+                            <span class="version-badge">v1.1.0</span>
+                            <p class="file-type">.exe installer</p>
+                            <a href="installer/windows/v1.1.0/Lau-PyDE-Setup.exe" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i>
+                                <span>Download Now</span>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+                <div class="tab-content" id="linux-tab">
+                    <div class="version-picker">
+                        <label for="linuxVersion">Release version</label>
+                        <div class="select-wrap">
+                            <select id="linuxVersion" class="version-select">
+                                <option value="1.0.0" selected>v1.0.0 (Latest)</option>
+                                <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
+                                <option value="1.1.0" disabled>v1.1.0 (Coming soon)</option>
+                                <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + link) -->
+                                <option value="1.2.0" disabled>v1.2.0 (Coming soon)</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="release-panel active" data-version="1.0.0">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <h3>Lau-PyDE for Linux</h3>
+                            <span class="version-badge">v1.0.0</span>
+                            <p class="file-info">Source code and instructions</p>
+                            <p>
+                                Linux support is currently not available as a packaged download. While I primarily developed and tested Lau-PyDE on Linux and it's most compatible with my Linux workflow, a packaged Linux download isn't currently provided on this website.
+                            </p>
+                            <p>
+                                Visit the GitHub repository for the latest Linux installation instructions:
+                            </p>
+                            <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Repository</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- FUTURE RELEASE TEMPLATE (Linux): uncomment, then edit the version and the download link
+                    <div class="release-panel" data-version="1.1.0">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <h3>Lau-PyDE for Linux</h3>
+                            <span class="version-badge">v1.1.0</span>
+                            <p class="file-info">Package or source</p>
+                            <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source/releases" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-download"></i>
+                                <span>Download Now</span>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section id="help" class="section">
+        <div class="container">
+            <h2>Help & Documentation</h2>
+
+            <article class="content-block">
+                <h3>Installing Lau-PyDE</h3>
+                <h4>Windows Steps:</h4>
+                <ol class="step-list">
+                    <li>Download the <code>.exe</code> installer</li>
+                    <li>Run the installer</li>
+                    <li>Install Lau-PyDE</li>
+                    <li>Install Python from the official Python website if Python is not already installed</li>
+                    <li>Launch Lau-PyDE</li>
+                    <li>Create or open a Python project</li>
+                    <li>Write Python code</li>
+                    <li>Run the file</li>
+                </ol>
+
+                <button class="btn btn-outline guide-toggle" id="guideToggle" type="button" aria-expanded="false" aria-controls="windowsGuide">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>Show detailed installation guide</span>
+                </button>
+
+                <div class="guide-panel" id="windowsGuide">
+                    <div class="guide-panel-inner">
+                        <div class="guide-body">
+                            <h4>How to install Lau-PyDE on Windows</h4>
+                            <ol class="step-list">
+                                <li><strong>Download the installer.</strong> Go to the <a href="#download">Download</a> section, choose Windows and your release version, then click <em>Download Now</em>. You'll get a file named <code>Lau-PyDE-Setup.exe</code>.</li>
+                                <li><strong>Open the installer.</strong> Open your Downloads folder and double-click <code>Lau-PyDE-Setup.exe</code>. If Windows asks for permission to make changes, choose Yes. If it warns about an unrecognized app, make sure the file came from this website or the official GitHub repository before continuing.</li>
+                                <li><strong>Follow the setup prompts.</strong> Pick an install location (the default is fine) and wait for the setup to finish.</li>
+                                <li><strong>Install Python.</strong> Lau-PyDE needs a Python interpreter to run your code. Download Python from <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer">python.org</a> and enable <em>Add Python to PATH</em> during setup. To check it, open a terminal and run <code>py --version</code>.</li>
+                                <li><strong>Launch Lau-PyDE.</strong> Open the app after installation. With no project open, you'll see the welcome screen.</li>
+                                <li><strong>Open a project folder.</strong> Click <em>Open Folder</em> and choose the folder for your project, then open a <code>.py</code> file from the explorer.</li>
+                                <li><strong>Run your code.</strong> Run the current file and read the results in the Output panel. If your program uses <code>input()</code>, type your answer in the input area.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-block">
+                <h3>Running Python</h3>
+                <p>
+                    Lau-PyDE runs Python files using the installed Python interpreter. If Python cannot be found, verify that Python is installed correctly and available to the system.
+                </p>
+            </article>
+
+            <article class="content-block">
+                <h3>Common Problems</h3>
+                
+                <!-- OS Selection for Troubleshooting -->
+                <div class="os-selector-top" style="margin-bottom: 2rem;">
+                    <button class="os-btn" data-os="windows" onclick="showOSGuide('windows')" style="background-color: #0078d4; color: white;">
+                        <i class="fab fa-windows"></i> Windows
+                    </button>
+                    <button class="os-btn" data-os="linux" onclick="showOSGuide('linux')" style="background-color: #000000; color: white;">
+                        <i class="fab fa-linux"></i> Linux
+                    </button>
+                </div>
+                
+                <!-- Windows Specific Problems -->
+                <div id="windows-guide" class="os-guide-content" style="display: block;">
+                    <h4><i class="fab fa-windows"></i> Windows Troubleshooting</h4>
+                    <div class="faq-list">
+                        <details>
+                            <summary>Lau-PyDE does not start on Windows</summary>
+                            <p>First, try restarting your computer. Check if your Windows version is supported (Windows 7 or later). Verify your system meets the minimum requirements (121 MB RAM). If you have an antivirus running, temporarily disable it and try launching Lau-PyDE. Check the Event Viewer for error logs. If the issue persists, check the GitHub repository for known issues specific to your Windows version.</p>
+                        </details>
+                        <details>
+                            <summary>Python is not detected on Windows</summary>
+                            <p>Verify that Python is installed from the official <a href="https://www.python.org" target="_blank">Python website</a>. During installation, ensure "Add Python to PATH" is checked. After installation, restart Lau-PyDE. Test by opening Command Prompt and typing <code>python --version</code>. If it still doesn't work, you may need to add Python manually to your system PATH environment variable. Go to Settings → System → About → Advanced system settings → Environment Variables, then add Python's installation directory to the PATH variable.</p>
+                        </details>
+                        <details>
+                            <summary>Python file does not run on Windows</summary>
+                            <p>Ensure the file is saved with the <code>.py</code> extension. Verify the file path doesn't contain special characters or spaces. Check that Python is properly detected (see above). If you're using external libraries, ensure they're installed via Command Prompt using <code>pip install [package-name]</code>. Check the terminal output window in Lau-PyDE for detailed error messages.</p>
+                        </details>
+                        <details>
+                            <summary>Installation problems on Windows</summary>
+                            <p>Run the installer with Administrator privileges (right-click → Run as administrator). Temporarily disable your antivirus software during installation. Ensure you have at least 500 MB free disk space. If the installer fails, download it again from the official repository. Try installing in a different directory, not in Program Files if permissions are an issue. Check that your Windows is up to date with the latest patches.</p>
+                        </details>
+                        <details>
+                            <summary>Application crashes on Windows</summary>
+                            <p>Note the exact error message and when it occurs. Check if you're running the latest version. Try running in compatibility mode (right-click → Properties → Compatibility tab). Disable visual themes or run in windowed mode if available. If it's related to graphics, try updating your graphics drivers. Report the detailed error to the GitHub repository with your Windows version and the steps to reproduce.</p>
+                        </details>
+                        <details>
+                            <summary>Terminal command does not work on Windows</summary>
+                            <p>Verify the command works in Windows Command Prompt or PowerShell first. Ensure the command is in your system PATH. For Python commands, use <code>python -m [module]</code> syntax. If using pip, ensure it's installed with your Python installation. Check that you're using the correct command syntax for Windows (some commands differ from Linux).</p>
+                        </details>
+                    </div>
+                </div>
+                
+                <!-- Linux Specific Problems -->
+                <div id="linux-guide" class="os-guide-content" style="display: none;">
+                    <h4><i class="fab fa-linux"></i> Linux Troubleshooting</h4>
+                    <div class="faq-list">
+                        <details>
+                            <summary>Lau-PyDE does not start on Linux</summary>
+                            <p>First, verify your Linux distribution is supported (Ubuntu 18.04+, Debian 10+, Fedora 28+). Check that your system has at least 121 MB RAM available. If using a newer Python version, ensure compatibility. Try running Lau-PyDE from the terminal to see error messages: <code>./lau-pyde</code> or <code>python lau-pyde.py</code>. Check that you have execute permissions on the binary: <code>chmod +x lau-pyde</code>. If you see missing library errors, install development packages: <code>sudo apt install python3-dev</code> (Ubuntu/Debian) or <code>sudo dnf install python3-devel</code> (Fedora).</p>
+                        </details>
+                        <details>
+                            <summary>Python is not detected on Linux</summary>
+                            <p>Verify Python 3 is installed: <code>python3 --version</code>. Most Linux distributions come with Python pre-installed. If not, install via your package manager: <code>sudo apt install python3 python3-pip</code> (Ubuntu/Debian) or <code>sudo dnf install python3 python3-pip</code> (Fedora). Ensure Lau-PyDE is configured to use <code>python3</code>, not <code>python</code> (which might be Python 2 on older systems). Check your PATH by typing <code>which python3</code>.</p>
+                        </details>
+                        <details>
+                            <summary>Python file does not run on Linux</summary>
+                            <p>Verify the file has the <code>.py</code> extension and is saved in a readable location. Check file permissions: <code>ls -la [filename]</code>. Ensure the Python executable path is correct in Lau-PyDE settings. If using external libraries, install them via pip: <code>pip3 install [package-name]</code>. Check for permission errors in the terminal output. For system-wide packages, you may need to use <code>sudo</code> or create a virtual environment: <code>python3 -m venv myenv</code>.</p>
+                        </details>
+                        <details>
+                            <summary>Installation problems on Linux</summary>
+                            <p>Extract the archive: <code>tar -xzf lau-pyde-linux.tar.gz</code>. Make the binary executable: <code>chmod +x lau-pyde</code>. If using a package manager version, use <code>sudo apt install lau-pyde</code> or equivalent. If missing dependencies, install development libraries: <code>sudo apt install python3-dev libgl1-mesa-glx</code> (Ubuntu/Debian). On Fedora: <code>sudo dnf install python3-devel mesa-libGL</code>. Ensure your Linux kernel is up to date.</p>
+                        </details>
+                        <details>
+                            <summary>Application crashes on Linux</summary>
+                            <p>Run Lau-PyDE from terminal to capture full error output: <code>./lau-pyde 2>&1 | tee lau-pyde.log</code>. Check system logs: <code>journalctl -xe</code>. If it's a graphics issue, try running with software rendering: <code>QT_XCB_GL_INTEGRATION=none ./lau-pyde</code>. Update your system: <code>sudo apt update && sudo apt upgrade</code>. Check for missing libraries with <code>ldd ./lau-pyde</code>. Report the error log to the GitHub repository.</p>
+                        </details>
+                        <details>
+                            <summary>Terminal command does not work on Linux</summary>
+                            <p>Test the command in your shell first: <code>which [command]</code>. Ensure the command is installed: <code>apt search [command]</code> or <code>dnf search [command]</code>. Check your PATH: <code>echo $PATH</code>. For Python modules, use: <code>python3 -m [module]</code>. If it's a custom script, ensure it has execute permissions: <code>chmod +x [script]</code>. Some commands require full paths or may be aliased differently on Linux.</p>
+                        </details>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-block">
+                <h3>Reporting Bugs</h3>
+                <p>
+                    If you encounter a bug:
+                </p>
+                <ol class="step-list">
+                    <li>Check the GitHub repository</li>
+                    <li>Check existing issues</li>
+                    <li>Update to the latest available version</li>
+                    <li>If the problem persists, report the issue with:
+                        <ul>
+                            <li>Operating system and version</li>
+                            <li>Lau-PyDE version</li>
+                            <li>Python version</li>
+                            <li>Error message</li>
+                            <li>Steps to reproduce</li>
+                        </ul>
+                    </li>
+                </ol>
+                <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source/issues" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Report a Bug</a>
+            </article>
+
+            <article class="content-block">
+                <h3>Updates & Releases</h3>
+                <p>
+                    Visit the GitHub repository for updates, releases, bug fixes, and development changes:
+                </p>
+                <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Repository</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            
+            <p class="contact-intro">
+                Let's connect and stay updated:
+            </p>
+
+            <div class="contact-links">
+                <a href="https://github.com/ryuuufynnn" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                
+                <a href="https://t.me/yuhimofanny" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                
+                <a href="https://instagram.com/lau.jsx" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                
+                <a href="https://tiktok.com/@ryuhahaily" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+                
+                <a href="https://facebook.com/laudgaf" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                
+                <a href="https://wa.me/qr/RS6PK4UJISCNO1" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                
+                <a href="mailto:comp.sci.lau@programmer.net" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits Section -->
+    <section class="credits-section">
+        <div class="container">
+            <h3>Credits & Attribution</h3>
+            <div class="credits-content">
+                <article class="credit-item">
+                    <h4>Logo & Branding</h4>
+                    <p>
+                        The Lau-PyDE logo is an original design created by John Laurence Aramay. 
+                        The logo combines visual elements representing Python development, speed, and simplicity. 
+                        Inspiration drawn from: Python official logo, Visual Studio Code, and PyCharm aesthetics.
+                    </p>
+                </article>
+                <article class="credit-item">
+                    <h4>Payment Methods</h4>
+                    <p>
+                        Payment method logos (GCash, Maya, GoTyme) are official trademarks of their respective companies:
+                        <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                            <li><strong>GCash:</strong> © Globe Telecom, Inc.</li>
+                            <li><strong>Maya:</strong> © PayMaya Corporation</li>
+                            <li><strong>GoTyme:</strong> © GoTyme Bank</li>
+                        </ul>
+                    </p>
+                </article>
+                <article class="credit-item">
+                    <h4>Software & Libraries</h4>
+                    <p>
+                        <strong>Website:</strong> Built with HTML5, CSS3, and Vanilla JavaScript<br>
+                        <strong>Icons:</strong> Font Awesome 6.4.0 (free icons)<br>
+                        <strong>Fonts:</strong> System fonts stack (Apple System Font, Segoe UI, Helvetica Neue)<br>
+                        <strong>IDE:</strong> Lau-PyDE built with Python and PySide6 (Qt for Python)
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lau-PyDE</h3>
+                    <p class="footer-motto">Launch IDE <span class="arrow">→</span> Code <span class="arrow">→</span> Run</p>
+                    <p class="footer-tagline">
+                        An open-source Python Development Environment.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#help">Help</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Built With</h4>
+                    <p>
+                        <strong>Lau-PyDE:</strong> Python & PySide6
+                    </p>
+                    <p class="footer-meta">
+                        <strong>This Website:</strong> HTML, CSS & JavaScript
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lau-PyDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fab fa-python" aria-hidden="true"></i>
+    </button>
+
+    <!-- Image Lightbox (logo + screenshots) -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close viewer">
+            <i class="fas fa-times"></i>
+        </button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

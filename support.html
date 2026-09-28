@@ -1,0 +1,217 @@
+<!--
+Author: John Laurence Aramay, BSCpE2
+Created: September 28, 2026
+Support Page for Lau-PyDE
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Support Lau-PyDE development through various payment methods.">
+    <meta name="theme-color" content="#0f0f0f">
+    
+    <title>Support Lau-PyDE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo" id="logoHome">
+                <img src="assets/lau-pyde_logo.jpg" alt="Lau-PyDE Logo" class="logo-img">
+                <span class="logo-text">Lau-PyDE</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#download" class="nav-link">Download</a></li>
+                <li><a href="index.html#help" class="nav-link">Help</a></li>
+                <li><a href="support.html" class="nav-link">Support</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Support Section -->
+    <section class="section support-section">
+        <div class="container">
+            <div class="support-intro">
+                <h1>Support Lau-PyDE</h1>
+                <p class="support-lead">
+                    Lau-PyDE is an independent open-source project. If you find it useful and want to support its development, you can contribute through the options below.
+                </p>
+                
+                <div class="support-note">
+                    <i class="fab fa-python"></i>
+                    <span>Your support helps with development, hosting, and keeping this project alive!</span>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <!-- GCash -->
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>GCash</h3>
+                    <p>Fast and easy mobile payment</p>
+                    <div class="qr-preview" onclick="openModal('gcashModal')">
+                        <img src="assets/gcash.jpg" alt="GCash QR Code">
+                    </div>
+                    <button class="view-qr-btn" onclick="openModal('gcashModal')">
+                        <i class="fas fa-qrcode"></i>
+                        <span>View QR Code</span>
+                    </button>
+                </div>
+
+                <!-- Maya -->
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Maya</h3>
+                    <p>Digital wallet payment solution</p>
+                    <div class="qr-preview" onclick="openModal('mayaModal')">
+                        <img src="assets/maya.jpg" alt="Maya QR Code">
+                    </div>
+                    <button class="view-qr-btn" onclick="openModal('mayaModal')">
+                        <i class="fas fa-qrcode"></i>
+                        <span>View QR Code</span>
+                    </button>
+                </div>
+
+                <!-- GoTyme Bank -->
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>GoTyme Bank</h3>
+                    <p>Bank transfer and payment</p>
+                    <div class="qr-preview" onclick="openModal('gotypeModal')">
+                        <img src="assets/gotyme.jpg" alt="GoTyme Bank QR Code">
+                    </div>
+                    <button class="view-qr-btn" onclick="openModal('gotypeModal')">
+                        <i class="fas fa-qrcode"></i>
+                        <span>View QR Code</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="support-bottom">
+                <h3>Thank You for Your Support!</h3>
+                <p>
+                    Every contribution, no matter how small, helps me continue developing Lau-PyDE and bringing you the best experience possible.
+                </p>
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="gcashModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('gcashModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">GCash Payment QR Code</h2>
+            <img src="assets/gcash.jpg" alt="GCash QR Code" class="modal-qr-image">
+            <p class="modal-caption">
+                Scan this QR code with your GCash app to send your support.
+            </p>
+        </div>
+    </div>
+
+    <div id="mayaModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('mayaModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">Maya Payment QR Code</h2>
+            <img src="assets/maya.jpg" alt="Maya QR Code" class="modal-qr-image">
+            <p class="modal-caption">
+                Scan this QR code with your Maya app to send your support.
+            </p>
+        </div>
+    </div>
+
+    <div id="gotypeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('gotypeModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">GoTyme Bank QR Code</h2>
+            <img src="assets/gotyme.jpg" alt="GoTyme Bank QR Code" class="modal-qr-image">
+            <p class="modal-caption">
+                Scan this QR code with your GoTyme Bank app to send your support.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lau-PyDE</h3>
+                    <p class="footer-motto">Launch IDE <span class="arrow">→</span> Code <span class="arrow">→</span> Run</p>
+                    <p class="footer-tagline">
+                        An open-source Python Development Environment.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                        <li><a href="index.html#download">Download</a></li>
+                        <li><a href="index.html#help">Help</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Built With</h4>
+                    <p>
+                        <strong>Lau-PyDE:</strong> Python & PySide6
+                    </p>
+                    <p class="footer-meta">
+                        <strong>This Website:</strong> HTML, CSS & JavaScript
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lau-PyDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fab fa-python" aria-hidden="true"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script src="js/support.js"></script>
+</body>
+</html>
